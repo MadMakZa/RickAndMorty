@@ -10,7 +10,7 @@ import shadow.step.rickandmorty.R
 import shadow.step.rickandmorty.data.Character
 
 class CharacterAdapter(private val characterListItems: MutableList<Character>,
-//                       private val clickListener: OnItemClickListener
+                       private val listener: OnItemClickListener
                        )
     : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
@@ -42,7 +42,7 @@ class CharacterAdapter(private val characterListItems: MutableList<Character>,
         }
 
         override fun onClick(v: View?) {
-//            clickListener.onItemClick(position = absoluteAdapterPosition)
+            listener.onItemClick(position = absoluteAdapterPosition)
         }
     }
 

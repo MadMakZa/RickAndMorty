@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import shadow.step.rickandmorty.MainActivity.Global.detailsCharacterStatus
 import shadow.step.rickandmorty.data.Character
 import shadow.step.rickandmorty.data.CharacterList
 import shadow.step.rickandmorty.databinding.ActivityMainBinding
@@ -14,6 +15,9 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    object Global {
+        var detailsCharacterStatus: Boolean = false
+    }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,5 +51,10 @@ class MainActivity : AppCompatActivity() {
                     "Gender$n")
             )
         }
+    }
+
+    override fun onBackPressed() {
+        detailsCharacterStatus = false
+        super.onBackPressed()
     }
 }
